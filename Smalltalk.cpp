@@ -12,6 +12,7 @@
 using namespace std;
 
 Smalltalk::Smalltalk(std::string myNationality, int iPerson):nationality(myNationality), iPerson(iPerson), current_phrase(0){
+	pWatch = unique_ptr<Watch>(nullptr);
 }
 
 Smalltalk::~Smalltalk(){
@@ -40,7 +41,7 @@ std::unique_ptr<Watch>  Smalltalk::takeWatch(){
 }
 
 bool Smalltalk::giveWatch(std::unique_ptr<Watch> &pWatch){
-	if(pWatch != 0){
+	if(this->pWatch.get() != 0){
 		return false;
 	}
 	this->pWatch = move(pWatch);

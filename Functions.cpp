@@ -35,16 +35,13 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 		vectPeople.push_back(unique_ptr<ST_American_DonutEnthusiest>(new ST_American_DonutEnthusiest(i)));
 	}
 	int size = vectPeople.size();
-	if(numWatches < size){
-		for(int i = 0; i < numWatches; i++){
-			unique_ptr<Watch> temp = unique_ptr<Watch>(new Watch());
-			vectPeople[i]->giveWatch(temp);
-		}
-	}
-	else{
-		for(int i = 0; i < size; i++){
-			unique_ptr<Watch> temp = unique_ptr<Watch>(new Watch());
-			vectPeople[i]->giveWatch(temp);
+	int watchNum = 0;
+	for(int i = 0; i < size; i++){
+		if(watchNum < numWatches){
+			unique_ptr<Watch> temp = unique_ptr<Watch>(new Watch);
+			if(vectPeople[i]->giveWatch(temp)){
+				watchNum++;
+			}
 		}
 	}
 	return vectPeople;
