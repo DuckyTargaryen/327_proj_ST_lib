@@ -34,20 +34,18 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 	for(int i = 1; i <= numbAmericanDonutEnthusiest; i++){
 		vectPeople.push_back(unique_ptr<ST_American_DonutEnthusiest>(new ST_American_DonutEnthusiest(i)));
 	}
-	if(numWatches < vectPeople.size()){
+	int size = vectPeople.size();
+	if(numWatches < size){
 		for(int i = 0; i < numWatches; i++){
 			unique_ptr<Watch> temp = unique_ptr<Watch>(new Watch());
-			//vectPeople[i]->giveWatch(move(temp));
+			vectPeople[i]->giveWatch(temp);
 		}
 	}
 	else{
-		for(int i = 0; i < vectPeople.size(); i++){
-
+		for(int i = 0; i < size; i++){
+			unique_ptr<Watch> temp = unique_ptr<Watch>(new Watch());
+			vectPeople[i]->giveWatch(temp);
 		}
 	}
-		//then give the watches away to first NUM_WATCHES people in the vector
-		// when you are finished using the vector you return
-		//from this function(see Smalltalk header for hints)
-
 	return vectPeople;
 }

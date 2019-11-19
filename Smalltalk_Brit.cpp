@@ -9,7 +9,7 @@
 #include "./includes/constants.h";
 
 Smalltalk_Brit::Smalltalk_Brit(int iPerson):Smalltalk(BRIT, iPerson){
-
+	populatePhrases();
 }
 
 Smalltalk_Brit::~Smalltalk_Brit(){

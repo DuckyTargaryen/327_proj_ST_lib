@@ -4,8 +4,10 @@
  *  Created on: Nov 13, 2019
  *      Author: sean
  */
+#include <iostream>
 #include "./includes/Smalltalk.h"
 #include "./includes/Watch.h"
+#include "./includes/constants.h"
 
 using namespace std;
 
@@ -23,15 +25,26 @@ std::string Smalltalk::saySomething(){
 }
 
 std::string Smalltalk::getTime(){
+	if(pWatch == 0){
+		return I_DO_NOT_HAVE_A_WATCH;
+	}
+	return pWatch->getTime();
 
 }
 
 std::unique_ptr<Watch>  Smalltalk::takeWatch(){
-
+	if(pWatch == 0){
+		return unique_ptr<Watch>(nullptr);
+	}
+	return move(pWatch);
 }
 
 bool Smalltalk::giveWatch(std::unique_ptr<Watch> &pWatch){
-
+	if(pWatch != 0){
+		return false;
+	}
+	this->pWatch = move(pWatch);
+	return true;
 }
 
 

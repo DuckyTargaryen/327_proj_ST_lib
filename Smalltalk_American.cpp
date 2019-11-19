@@ -9,10 +9,11 @@
 #include "./includes/constants.h"
 
 Smalltalk_American::Smalltalk_American(int iPerson):Smalltalk(AMERICAN, iPerson){
-
+	populatePhrases();
 }
 
 Smalltalk_American::Smalltalk_American(std::string myNationality, int iPerson):Smalltalk(myNationality, iPerson){
+	populatePhrases();
 }
 
 Smalltalk_American::~Smalltalk_American(){
