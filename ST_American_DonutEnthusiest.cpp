@@ -16,6 +16,9 @@ ST_American_DonutEnthusiest::ST_American_DonutEnthusiest(int i):Smalltalk_Americ
 	populatePhrases();
 }
 
+/**
+ * Destructor
+ */
 ST_American_DonutEnthusiest::~ST_American_DonutEnthusiest(){
 
 }

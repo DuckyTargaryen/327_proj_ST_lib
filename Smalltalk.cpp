@@ -19,8 +19,10 @@ using namespace std;
 Smalltalk::Smalltalk(std::string myNationality, int iPerson):nationality(myNationality), iPerson(iPerson), current_phrase(0), pWatch(unique_ptr<Watch>(nullptr)){
 }
 
+/**
+ * Destructor
+ */
 Smalltalk::~Smalltalk(){
-
 }
 
 /**

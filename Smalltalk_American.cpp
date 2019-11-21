@@ -25,8 +25,10 @@ Smalltalk_American::Smalltalk_American(std::string myNationality, int iPerson):S
 	populatePhrases();
 }
 
+/**
+ * Destructor
+ */
 Smalltalk_American::~Smalltalk_American(){
-
 }
 
 /**

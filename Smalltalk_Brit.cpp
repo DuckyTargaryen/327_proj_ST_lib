@@ -16,6 +16,9 @@ Smalltalk_Brit::Smalltalk_Brit(int iPerson):Smalltalk(BRIT, iPerson){
 	populatePhrases();
 }
 
+/**
+ * Destructor
+ */
 Smalltalk_Brit::~Smalltalk_Brit(){
 
 }
