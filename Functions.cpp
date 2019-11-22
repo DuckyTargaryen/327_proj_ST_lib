@@ -38,8 +38,8 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 	int watchNum = 0;
 	for(int i = 0; i < size; i++){
 		if(watchNum < numWatches){
-			unique_ptr<Watch> temp = unique_ptr<Watch>(new Watch);
-			if(vectPeople[i]->giveWatch(temp)){
+			unique_ptr<Watch> freeWatch = unique_ptr<Watch>(new Watch);
+			if(vectPeople[i]->giveWatch(freeWatch)){
 				watchNum++;
 			}
 		}
